@@ -16,6 +16,7 @@ Um site simples, mas cheio de carinho, para surpreender alguém especial.
 ## 🖼️ Demonstração
 
 
----<img width="1108" height="996" alt="Captura de tela 2025-08-30 165345" src="https://github.com/user-attachments/assets/2afe1751-3c07-4c4a-82f1-d0e376fe546a" />
+<img width="1145" height="1000" alt="Captura de tela 2025-08-30 165345" src="https://github.com/user-attachments/assets/d778cf3a-5325-4c3d-8d36-1c7965cd6c3a" />
+
 
 Feito com ❤️ e linhas de código.
