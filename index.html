@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <title>O TEMPO DO NOSSO AMOR</title>
+  <style>
+    /* Estilo do corpo da página */
+    body { font-family: "Pacifico", cursive; text-align:center; background:#0000FF; color:white; }
+
+    /* Estilo da imagem do casal */
+    .pra-gata img {
+      width:300px;
+      margin:10px;
+      border-radius:20px;
+      border:7px solid black;
+      transition: transform 1s;
+    }
+
+    /* Hover da imagem */
+    .pra-gata img:hover { transform: scale(1.1); }
+
+    /* Estilo do contador */
+    #contador-dias { font-size:30px; margin:20px 0; }
+
+    /* Estilo do botão/lovelove */
+    .lovelove-btn { width:400px; height:400px; margin:5px auto; animation:pulse 1.1s infinite; }
+    .lovelove-btn img:hover { transform: scale(1.3); transition: transform 1s ease; }
+
+
+    /* Estilo do player do spotify */
+    .music  {
+			width: 400px;
+    height: 400px;
+    cursor: pointer;
+    display: block;
+    margin: 5px auto;
+		}
+
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Imagem do casal -->
+  <div class="pra-gata">
+    <img src="https://cdn.pixabay.com/photo/2016/02/11/19/14/couple-1194312_1280.jpg" alt="casal">
+    <h1>O TEMPO DO NOSSO AMOR...⏳</h1>
+  </div>
+
+  <!-- Aqui o contador aparecerá -->
+  <p id="contador-dias"></p>
+
+  <!-- Coração pulsante -->
+  <div class="lovelove-btn">
+    <img src="https://i.ibb.co/sppXZzhq/pngtree-red-3d-heart-png-image-2569975.png" alt="coração">
+  </div>
+
+  <!-- Player Spotify -->
+  <div class="music">
+    <iframe src="https://open.spotify.com/embed/track/0UrLwWE4zjQicGjuQE6aAN"
+            width="100%" height="152" frameborder="0" allow="autoplay; encrypted-media"></iframe>
+
+  <script>
+    // Data de início (ano, mês-1, dia). Mês começa em 0 (maio = 4)
+    const dataInicio = new Date(2015, 4, 20);
+
+    // Seleciona o elemento onde o texto será escrito
+    const contador = document.getElementById("contador-dias");
+
+    // Função que calcula dias, horas, minutos, segundos
+    function atualizarContador() {
+      const hoje = new Date(); // momento atual
+      const diferenca = hoje - dataInicio; // diferença em milissegundos
+
+      // dias completos
+      const dias = Math.floor(diferenca / (1000 * 60 * 60 * 24));
+
+      // horas restantes depois de remover os dias
+      const horas = Math.floor((diferenca % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+
+      // minutos restantes depois de remover as horas
+      const minutos = Math.floor((diferenca % (1000 * 60 * 60)) / (1000 * 60));
+
+      // segundos restantes depois de remover os minutos
+      const segundos = Math.floor((diferenca % (1000 * 60)) / 1000);
+
+      // Atualiza o texto do elemento
+      contador.textContent =
+        `Já se passaram ${dias} dias ${horas} horas ${minutos} minutos ${segundos} segundos que estamos juntos!`;
+    }
+
+    // Roda a função já e depois a cada segundo
+    atualizarContador();
+    setInterval(atualizarContador, 1000);
+  </script>
+</body>
+</html>
